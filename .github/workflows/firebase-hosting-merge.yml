@@ -11,7 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci && npm run build
+      - run: >-
+          touch .env && echo "NG_APP_MESSAGING_SENDER_ID=${{
+          secrets.MESSAGING_SENDER_ID }}" >> .env && echo "NG_APP_APP_ID=${{
+          secrets.APP_ID }}" >> .env && echo "NG_APP_API_KEY=${{ secrets.API_KEY
+          }}" >> .env && echo "NG_APP_PROJECT_ID=${{ secrets.PROJECT_ID }}" >>
+          .env && echo "NG_APP_STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >>
+          .env && echo "NG_APP_DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
+          && echo "NG_APP_AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> .env && npm
+          ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
