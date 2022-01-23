@@ -2,7 +2,7 @@
   "hosting": [
     {
       "site": "kanban-fire-c5358",
-      "public": "dist/kanban-fire-c5358",
+      "public": "dist/kanban-fire-practice",
       "ignore": [
         "**/.*"
       ],
