@@ -107,8 +107,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "kanban-fire-practice:build:production",
-            "firebaseProject": "kanbanfire-d1f93",
-            "firebaseHostingSite": "kanbanfire-d1f93"
+            "firebaseProject": "inki-demo-projects",
+            "firebaseHostingSite": "inki-demo-projects"
           }
         }
       }
